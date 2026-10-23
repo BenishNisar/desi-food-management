@@ -1,0 +1,214 @@
+:root {
+    --sidebar-width: 260px;
+    --primary-color: #c0392b;
+    --primary-dark: #922b21;
+    --sidebar-bg: #1a1f2e;
+    --sidebar-hover: #252b3d;
+    --body-bg: #f4f6f9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--body-bg);
+    margin: 0;
+    min-height: 100vh;
+}
+
+.app-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1030;
+}
+
+.sidebar-offcanvas {
+    background: var(--sidebar-bg);
+    color: #fff;
+    width: var(--sidebar-width);
+}
+
+.sidebar-brand h5 { font-weight: 700; }
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    background: var(--sidebar-hover);
+    color: #fff;
+    border-left-color: var(--primary-color);
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 0;
+    min-width: 0;
+}
+
+@media (min-width: 992px) {
+    .main-content { margin-left: var(--sidebar-width); }
+}
+
+.top-navbar {
+    min-height: 60px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.content-area { min-height: calc(100vh - 60px); }
+
+.stat-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s;
+}
+
+.stat-card:hover { transform: translateY(-2px); }
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.bg-primary-custom { background: var(--primary-color) !important; }
+.btn-primary-custom {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+.btn-primary-custom:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: #fff;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.table-responsive { border-radius: 8px; }
+
+.pos-item-btn {
+    min-height: 90px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 2px solid #dee2e6;
+    background: #fff;
+    transition: all 0.15s;
+}
+
+.pos-item-btn:hover,
+.pos-item-btn:active {
+    border-color: var(--primary-color);
+    background: #fff5f5;
+    transform: scale(0.98);
+}
+
+.pos-item-btn .price {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    margin-top: 4px;
+}
+
+.cart-item {
+    border-bottom: 1px solid #eee;
+    padding: 0.75rem 0;
+}
+
+.qty-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    padding: 0;
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1f2e 0%, #2c3e50 50%, #c0392b 100%);
+}
+
+.login-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    max-width: 420px;
+    width: 100%;
+}
+
+.print-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+@media print {
+    .no-print { display: none !important; }
+    body { background: #fff; }
+    .print-page { max-width: 100%; padding: 0; }
+}
+
+.badge-low-stock { background: #e74c3c; }
+
+.chart-container {
+    position: relative;
+    height: 280px;
+}
+
+@media (max-width: 575px) {
+    .stat-card .card-body { padding: 1rem; }
+    .pos-item-btn { min-height: 70px; font-size: 0.9rem; }
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(192, 57, 43, 0.15);
+}
+
+.page-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-bar {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
